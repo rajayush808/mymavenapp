@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', credentialsId: 'your-credential-id', url: 'https://github.com/rajayush808/mymavenapp.git'
+                git branch: 'main', credentialsId: '5f05146f-90ff-4919-b2f7-8cc9690c356c', url: 'https://github.com/rajayush808/mymavenapp.git'
             }
         }
 
