@@ -2,8 +2,13 @@ pipeline {
     agent any
 
     tools {
-        maven 'mvn'         // 👈 Must match the name in Jenkins
-        jdk 'JDK 9'         // 👈 Must match the name in Jenkins
+        maven 'mvn'         // Must match the Maven tool name in Jenkins
+        jdk 'JDK 9'         // Must match the JDK tool name in Jenkins
+    }
+
+    environment {
+        JAVA_HOME = tool name: 'JDK 9', type: 'hudson.model.JDK'
+        PATH = "${JAVA_HOME}/bin:${env.PATH}"
     }
 
     stages {
